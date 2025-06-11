@@ -75,7 +75,3 @@ Activating the "Continue" button (applicable to road-allowed skips) will trigger
 Contact Information
 For any inquiries or further assistance, please utilize the following contact details:
 
-Email: ramadankoppas400@gmail.com
-
-Whatsapp: +966583757003
-
