@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+REM Waste Skip Selector Application
+This document outlines a React-based application designed to facilitate the selection of skip sizes for waste management purposes. The application provides a user-friendly interface for browsing available skip dimensions, obtaining relevant pricing and rental period information, and determining suitability for road placement.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Core Functionality
+Dynamic Inventory Presentation: The application retrieves and displays skip size data from an external API, presenting it in an organized and interactive list format.
 
-## Available Scripts
+Intuitive Selection Mechanism: Users are able to select or deselect skip items through a simple click interaction.
 
-In the project directory, you can run:
+Visual User Feedback:
 
-### `npm start`
+Upon hovering over a skip, an indicator appears, displaying "Selected" (signifying availability and selection status) or "Road Placement Not Available" (indicating a restriction).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Selected skips are visually highlighted with a distinct green border.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Comprehensive Information Display: Once a skip is selected, a dedicated section at the bottom of the interface populates with detailed information, including the skip's dimensions, pricing structure, and the designated rental period.
 
-### `npm test`
+Road Placement Verification: The system clearly communicates whether a particular skip is permissible for placement on public roadways.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Confirmation Protocol: Activation of the "Continue" button initiates a "Task Done" confirmation message, which includes relevant contact information for further inquiries.
 
-### `npm run build`
+Local Deployment Guide
+To deploy and execute this application within a local development environment, please adhere to the following instructions:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Prerequisites: Ensure that Node.js and npm (Node Package Manager) are installed on your system.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+File Acquisition: Obtain all project files and ensure they are systematically organized within a designated directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dependency Installation: Navigate to the project's root directory (where package.json resides) via your terminal or command prompt and execute the following command:
 
-### `npm run eject`
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This command will install all requisite React and associated dependencies.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+API Integration (ApiClass.js):
+The application relies on an ApiClass.js file, which must contain a getDataFromServer() method for data retrieval. This file should be located in the same directory as App.js and configured to accurately fetch skip data. A foundational example is provided below for reference:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Cascading Style Sheets (App.css):
+Verify the presence of an App.css file within the same directory as App.js. This file should contain all necessary CSS rules for the elements utilized in App.js (e.g., .App, .title, .ItemSize, .selectView, .notAllow).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Initiating the Development Server:
+Subsequent to the successful installation of dependencies and configuration of ApiClass.js, initiate the application by executing the following command in your terminal:
 
-## Learn More
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application will then become accessible in your web browser, typically at http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Project Architecture
+├── public/              // Contains publicly accessible assets, including the main HTML entry point.
+│   └── index.html
+│   └── ...
+├── src/                 // Encompasses the primary source code for the application.
+│   ├── App.js           // The central React component responsible for skip selection logic and rendering.
+│   ├── App.css          // Defines the styling rules for the App component.
+│   ├── ApiClass.js      // Manages data retrieval operations from external sources.
+│   └── index.js         // The initial entry point for the React application.
+├── package.json         // Lists project metadata and dependencies.
+├── package-lock.json    // Records the exact dependency tree used.
+└── README.md            // This comprehensive documentation file.
 
-### Code Splitting
+Operational Instructions
+Upon application launch, a curated list of available skip sizes will be displayed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Hover the mouse pointer over an individual skip item to ascertain its selection status.
 
-### Analyzing the Bundle Size
+Click on a skip item to effect its selection.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If the selected skip is permissible for road placement, its comprehensive details (size, price, rental duration) will be presented in the lower section of the interface. Subsequently, the "Continue" button may be engaged.
 
-### Making a Progressive Web App
+Conversely, if the skip is not authorized for road placement, a notification stating "Road Placement Not Available" will be displayed in the lower section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Re-clicking an already selected skip will deselect it, concurrently concealing the detailed information section.
 
-### Advanced Configuration
+Activating the "Continue" button (applicable to road-allowed skips) will trigger a "Task Done" confirmation dialogue.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contact Information
+For any inquiries or further assistance, please utilize the following contact details:
 
-### Deployment
+Email: ramadankoppas400@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Whatsapp: +966583757003
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
